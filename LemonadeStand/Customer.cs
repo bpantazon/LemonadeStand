@@ -9,6 +9,9 @@ namespace LemonadeStand
     {
         private int CustomerType;
         private int ChanceOfBuying;
+        private int Type;
+        private int PreferredRecipe;
+        private int FavoriteWeather;
 
         public void BuyLemonade()
         {

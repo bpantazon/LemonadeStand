@@ -16,5 +16,10 @@ namespace LemonadeStand
         {
             throw new System.NotImplementedException();
         }
+
+        public void SubtractFromInventory()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
