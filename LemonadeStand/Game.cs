@@ -9,9 +9,9 @@ namespace LemonadeStand
     {
         private int Customers;
 
-        public Inventory Inventory
+        public UserInterface Player
         {
-            get => default(Inventory);
+            get => default(UserInterface);
             set
             {
             }
@@ -27,31 +27,7 @@ namespace LemonadeStand
 
         public Day Day
         {
-            get => default(Day);
-            set
-            {
-            }
-        }
-
-        public Player Player
-        {
-            get => default(Player);
-            set
-            {
-            }
-        }
-
-        public Weather Weather
-        {
-            get => default(Weather);
-            set
-            {
-            }
-        }
-
-        public Customer Customer
-        {
-            get => default(Customer);
+            get => default(LemonadeStand.Day);
             set
             {
             }

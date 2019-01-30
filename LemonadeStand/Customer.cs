@@ -7,18 +7,17 @@ namespace LemonadeStand
 {
     public class Customer
     {
-        private int CustomerType;
-        private int ChanceOfBuying;
-        private int Type;
-        private int PreferredRecipe;
-        private int FavoriteWeather;
+        public int CustomerType;
+        public int ChanceOfBuying;
+        public int PreferredRecipe;
+        public int FavoriteWeather;
 
         public void BuyLemonade()
         {
             throw new System.NotImplementedException();
         }
 
-        public void MakeChanceOfBuying()
+        public virtual void GenerateChancesOfBuying()
         {
             throw new System.NotImplementedException();
         }
