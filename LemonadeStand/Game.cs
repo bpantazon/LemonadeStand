@@ -9,25 +9,17 @@ namespace LemonadeStand
     {
         private int Customers;
 
-        public UserInterface Player
-        {
-            get => default(UserInterface);
-            set
-            {
-            }
-        }
-
-        public Store Store
-        {
-            get => default(Store);
-            set
-            {
-            }
-        }
-
         public Day Day
         {
             get => default(LemonadeStand.Day);
+            set
+            {
+            }
+        }
+
+        public Player Player
+        {
+            get => default(Player);
             set
             {
             }

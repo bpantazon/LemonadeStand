@@ -10,11 +10,11 @@ namespace LemonadeStand
         private int chosenLemons;
         private int chosenSugar;
         private int chosenIceCubes;
-        private int profit;
+        
         private int wallet;
         //List<int> recipe = new List<int>() { chosenLemons, chosenSugar, chosenIceCubes };
         private int madeRecipe;
-        private int setPrice;
+        public int setPrice;
 
         public void SetPrice()
         {
@@ -31,14 +31,14 @@ namespace LemonadeStand
             Console.WriteLine("How many ice cubes will you add to your recipe?");
             chosenIceCubes = Console.ReadLine();
             //maybe make madeRecipe into a list to compare with customer preferences
-           
+
         }
 
-        
+
 
         public void CalculateProfit()
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 
@@ -59,11 +59,6 @@ namespace LemonadeStand
             throw new System.NotImplementedException();
         }
     }
-
-    public class Player
-    {
-        private int Name;
-        private int Wallet;
-        private int Profit;
-    }
 }
+
+   

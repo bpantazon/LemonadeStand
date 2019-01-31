@@ -7,12 +7,20 @@ namespace LemonadeStand
 {
     public class Weather
     {
-        private int WeatherList;
-        private int Forecast;
+        
+        private int forecast;
+        private List<string> weather = new List<string>() { "good", "fair", "bad" };
+        private string currentWeather;
 
+        public Weather (int forecast)
+        {
+            this.forecast = forecast;
+        }
         public void GenerateWeatherConditions()
         {
-            throw new System.NotImplementedException();
+            Random random = new Random();
+            int i = random.Next(weather.Count);
+            currentWeather = weather[i];
         }
     }
 }

@@ -39,5 +39,10 @@ namespace LemonadeStand
         {
             throw new System.NotImplementedException();
         }
+
+        public void CheckPlayerWallet()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

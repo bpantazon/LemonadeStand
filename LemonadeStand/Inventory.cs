@@ -7,14 +7,23 @@ namespace LemonadeStand
 {
     public class Inventory
     {
-        private int Cups;
-        private int Lemons;
-        private int Sugar;
-        private int IceCubes;
+        private int cups;
+        private int lemons;
+        private int sugar;
+        private int iceCubes;
 
-        public void AddToInventory()
+        public Inventory(int cups, int lemons, int sugar, int iceCubes)
         {
-            throw new System.NotImplementedException();
+            this.cups = cups;
+            this.lemons = lemons;
+            this.sugar = sugar;
+            this.iceCubes = iceCubes;
+        }
+
+        public void AddCups()
+        {
+            int boughtCups;
+            cups = cups + boughtCups;
         }
 
         public void SubtractFromInventory()
