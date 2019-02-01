@@ -20,7 +20,8 @@ namespace LemonadeStand
 
         public void AddDayPlayed()
         {
-            throw new System.NotImplementedException();
+            UserInterface.DisplayMessage("Thigns were bad");
+            
         }
 
         

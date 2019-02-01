@@ -7,14 +7,16 @@ namespace LemonadeStand
 {
     public class Weather
     {
-        
-        
+
+
+
         public List<string> weather = new List<string>() { "good", "fair", "bad" };
         public string currentWeather;
         public List<string> forecast = new List<string>() { };
+
         public Weather()
         {
-           
+            
         }
 
         public void GenerateWeatherConditions()
@@ -27,12 +29,12 @@ namespace LemonadeStand
         
         public void MakeForecast()
         {
-            int j = 0;
-            if (j < 8)
+            
+            for (int j = 0; j < 8; j++)
             {
                 GenerateWeatherConditions();
                 forecast.Add(currentWeather);
-                j++;
+                
             }
         }
     }
