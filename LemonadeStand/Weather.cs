@@ -10,17 +10,24 @@ namespace LemonadeStand
         
         private int forecast;
         private List<string> weather = new List<string>() { "good", "fair", "bad" };
-        private string currentWeather;
+        public string currentWeather;
 
-        public Weather (int forecast)
+        public Weather()
         {
-            this.forecast = forecast;
+           
         }
+
         public void GenerateWeatherConditions()
         {
             Random random = new Random();
             int i = random.Next(weather.Count);
             currentWeather = weather[i];
+        }
+
+        public void ShowForecast()
+        {
+            Console.WriteLine("Today's weather will be" + currentWeather);
+            Console.ReadLine();
         }
     }
 }

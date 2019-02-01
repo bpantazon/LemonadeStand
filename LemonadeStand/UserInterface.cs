@@ -5,12 +5,12 @@ using System.Text;
 
 namespace LemonadeStand
 {
-    public class UserInterface
+    public static class UserInterface
     {
-        private int chosenLemons;
-        private int chosenSugar;
-        private int chosenIceCubes;
-        
+        private int lemonsInRecipe;
+        private int sugarInRecipe;
+        private int iceCubesInRecipe;
+        //public Day day; instantiate a day to access the weather
         private int wallet;
         //List<int> recipe = new List<int>() { chosenLemons, chosenSugar, chosenIceCubes };
         private int madeRecipe;
@@ -22,23 +22,29 @@ namespace LemonadeStand
             SetPrice = Console.ReadLine();
         }
 
-        public void ChooseRecipe()
+        public static void ChooseRecipe()
         {
             Console.WriteLine("How many lemons will you add to your recipe?");
-            chosenLemons = Console.ReadLine();
+            lemonsInRecipe = Console.ReadLine();
             Console.WriteLine("How many cups of sugar will you add to your recipe?");
-            chosenSugar = Console.ReadLine();
+            sugarInRecipe = Console.ReadLine();
             Console.WriteLine("How many ice cubes will you add to your recipe?");
-            chosenIceCubes = Console.ReadLine();
+            iceCubesInRecipe = Console.ReadLine();
             //maybe make madeRecipe into a list to compare with customer preferences
 
+        }
+
+        public static void DisplayWeather()
+        {
+            Day day = new Day();
+            Console.WriteLine("Today's weather is" + day.weather.ShowWeather());
         }
 
 
 
         public void CalculateProfit()
         {
-            
+            //cups sold * price of cups
         }
     }
 
@@ -56,6 +62,7 @@ namespace LemonadeStand
 
         public void SellLemonade()
         {
+            var ourThng = UserInterface.ChooseRecipe();
             throw new System.NotImplementedException();
         }
     }

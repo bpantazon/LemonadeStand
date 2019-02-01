@@ -12,14 +12,6 @@ namespace LemonadeStand
         private int SugarPrice;
         private int CupsPrice;
 
-        public Inventory Inventory
-        {
-            get => default(Inventory);
-            set
-            {
-            }
-        }
-
         public void SellCups()
         {
             throw new System.NotImplementedException();

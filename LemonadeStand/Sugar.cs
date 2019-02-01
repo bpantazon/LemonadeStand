@@ -7,6 +7,5 @@ namespace LemonadeStand
 {
     public class Sugar
     {
-        private int sugarPrice;
     }
 }

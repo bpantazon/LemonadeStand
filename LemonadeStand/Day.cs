@@ -11,33 +11,21 @@ namespace LemonadeStand
         private int CurrentWeather;
         private int Hours;
 
-        public Customer Customer
+        //constructor
+    public Day()
         {
-            get => default(Customer);
-            set
-            {
-            }
+            Weather weather = new Weather();
         }
 
-        public Weather Weather
-        {
-            get => default(LemonadeStand.Weather);
-            set
-            {
-            }
-        }
-
-        public LemonadeStand LemonadeStand
-        {
-            get => default(LemonadeStand.LemonadeStand);
-            set
-            {
-            }
-        }
+     
 
         public void AddDayPlayed()
         {
             throw new System.NotImplementedException();
         }
+
+        
+         //add timer for the day length
+        
     }
 }

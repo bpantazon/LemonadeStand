@@ -7,9 +7,11 @@ namespace LemonadeStand
 {
     public class Stand
     {
+        private int profit;
+        private int cupsSold;
         public void CalculateProfit()
         {
-            throw new System.NotImplementedException();
+            //profit = cupsSold * setPrice; 
         }
     }
 }

@@ -7,6 +7,5 @@ namespace LemonadeStand
 {
     public class IceCube
     {
-        private int iceCubePrice;
     }
 }

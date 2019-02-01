@@ -25,6 +25,14 @@ namespace LemonadeStand
             }
         }
 
+        public Store Store
+        {
+            get => default(Store);
+            set
+            {
+            }
+        }
+
         public void GenerateCustomers()
         {
             throw new System.NotImplementedException();

@@ -10,9 +10,9 @@ namespace LemonadeStand
         public double money;
         //constructor
     
-        public Wallet(double money)
+        public Wallet()
         {
-            this.money = money;
+            
         }
     }
    

@@ -14,12 +14,15 @@ namespace LemonadeStand
 
         public void BuyLemonade()
         {
-            throw new System.NotImplementedException();
+            //current cups of lemonade - 1
         }
 
         public virtual void GenerateChancesOfBuying()
         {
-            throw new System.NotImplementedException();
+            if (weather.currentWeather = "bad")
+            {
+
+            }
         }
     }
 }
