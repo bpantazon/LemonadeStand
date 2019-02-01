@@ -40,7 +40,11 @@ namespace LemonadeStand
 
         public void PlayGame()
         {
-            throw new System.NotImplementedException();
+            Store = new Store();
+            Player = new Player();
+            //Store.CheckPlayerWallet(Player);
+            //Player.inventory.AddSugar(Store.sugar);
+            
         }
     }
 }

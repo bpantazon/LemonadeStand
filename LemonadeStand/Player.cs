@@ -12,7 +12,7 @@ namespace LemonadeStand
         public Player()
         {
             inventory = new Inventory();
-            wallet = new Wallet();
+            wallet = new Wallet(20.00);
         }
    
        

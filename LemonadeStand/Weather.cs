@@ -8,10 +8,10 @@ namespace LemonadeStand
     public class Weather
     {
         
-        private int forecast;
-        private List<string> weather = new List<string>() { "good", "fair", "bad" };
+        
+        public List<string> weather = new List<string>() { "good", "fair", "bad" };
         public string currentWeather;
-
+        public List<string> forecast = new List<string>() { };
         public Weather()
         {
            
@@ -24,10 +24,16 @@ namespace LemonadeStand
             currentWeather = weather[i];
         }
 
-        public void ShowForecast()
+        
+        public void MakeForecast()
         {
-            Console.WriteLine("Today's weather will be" + currentWeather);
-            Console.ReadLine();
+            int j = 0;
+            if (j < 8)
+            {
+                GenerateWeatherConditions();
+                forecast.Add(currentWeather);
+                j++;
+            }
         }
     }
 }

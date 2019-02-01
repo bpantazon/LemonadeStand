@@ -17,7 +17,7 @@ namespace LemonadeStand
             //current cups of lemonade - 1
         }
 
-        public virtual void GenerateChancesOfBuying()
+        public virtual void GenerateChancesOfBuying(Weather weather)
         {
             if (weather.currentWeather = "bad")
             {

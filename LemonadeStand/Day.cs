@@ -7,14 +7,13 @@ namespace LemonadeStand
 {
     public class Day
     {
-        private int DaysPlayed;
-        private int CurrentWeather;
-        private int Hours;
+
+        public Weather weather;
 
         //constructor
-    public Day()
+        public Day()
         {
-            Weather weather = new Weather();
+                weather = new Weather();
         }
 
      

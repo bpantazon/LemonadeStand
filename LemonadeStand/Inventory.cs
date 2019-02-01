@@ -27,7 +27,7 @@ namespace LemonadeStand
 
             Cup cup = new Cup();
             cupsInInventory.Add(cup);
-            //cups = cups + boughtCups;
+            
         }
         public void AddLemons()
         {
@@ -59,9 +59,21 @@ namespace LemonadeStand
         {
             iceCubesInInventory.Remove(iceCube);
         }
-        public void CountInventory()
+        public void CountInventoryCups()
         {
             cupsInInventory.Count();
+        }
+        public void CountInventoryLemons()
+        {
+            lemonsInInventory.Count();
+        }
+        public void CountInventoryIceCubes()
+        {
+            iceCubesInInventory.Count();
+        }
+        public void CountInventorySugar()
+        {
+            sugarInInventory.Count();
         }
     }
 

@@ -7,33 +7,39 @@ namespace LemonadeStand
 {
     public class Store
     {
-        private int IcePrice;
-        private int LemonsPrice;
-        private int SugarPrice;
-        private int CupsPrice;
+        public int IcePrice;
+        public int LemonsPrice;
+        public int SugarPrice;
+        public int CupsPrice;
+   
 
-        public void SellCups()
+
+        public void SellCups(Player player)
         {
-            throw new System.NotImplementedException();
+            player.inventory.AddCups();
+        }
+            
+
+        public void SellIce(Player player)
+        {
+            player.inventory.AddIceCubes();
         }
 
-        public void SellIce()
+        public void SellLemons(Player player)
         {
-            throw new System.NotImplementedException();
+            player.inventory.AddLemons();
         }
 
-        public void SellLemons()
+        public void SellSugar(Player player)
         {
-            throw new System.NotImplementedException();
+            player.inventory.AddSugar();
         }
 
-        public void SellSugar()
-        {
-            throw new System.NotImplementedException();
-        }
 
-        public void CheckPlayerWallet()
+        //example from nevin
+        public void CheckPlayerWallet(Player player, Weather weather)
         {
+            //player.inventory;
             throw new System.NotImplementedException();
         }
     }
