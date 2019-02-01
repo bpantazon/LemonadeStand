@@ -28,7 +28,15 @@ namespace LemonadeStand
         //    }
         //}
             
-        
+        public void SellCups(Player player)
+        {
+            player.wallet.money = player.wallet.money - (cupsPrice * UserInterface.AmountToBuy("Cups"));
+            for (int i = 0; i < UserInterface.AmountToBuy("Cups"); i++)
+            {
+                player.inventory.AddCups();
+            }
+
+        }
         public void SellIce(Player player)
         {
             player.wallet.money = player.wallet.money - (icePrice * UserInterface.AmountToBuy("Ice"));
@@ -41,29 +49,58 @@ namespace LemonadeStand
 
         public void SellLemons(Player player)
         {
-            player.wallet.money = player.wallet.money - (lemonPrice * UserInterface.AmountToBuy("Lemons"));
-            for (int i = 0; i < UserInterface.AmountToBuy("Lemons"); i++)
+            int amountToBuy = UserInterface.AmountToBuy("Lemons");
+            double costForLemons = lemonPrice * amountToBuy;
+            if (CheckPlayerWallet(player, costForLemons))
             {
-                player.inventory.AddLemons();
+                player.wallet.money = player.wallet.money - (lemonPrice * UserInterface.AmountToBuy("Lemons"));
+                for (int i = 0; i < UserInterface.AmountToBuy("Lemons"); i++)
+                {
+                    player.inventory.AddLemons();
+                }
             }
+            
             
         }
 
         public void SellSugar(Player player)
         {
-            player.wallet.money = player.wallet.money - (sugarPrice + UserInterface.AmountToBuy("Sugar"));
-            for (int i = 0; i < UserInterface.AmountToBuy("Sugar"); i++)
+            int amountToBuy = UserInterface.AmountToBuy("Sugar");
+            double costForSugar = sugarPrice * amountToBuy;
+            if (CheckPlayerWallet(player, costForSugar))
             {
-                player.inventory.AddSugar();
+                player.wallet.money = player.wallet.money - (sugarPrice * amountToBuy);
+                for (int i = 0; i < amountToBuy; i++)
+                {
+                    player.inventory.AddSugar();
+                }
             }
+          
         }
 
-        
-        public void CheckPlayerWallet(Player player)
+        //public void SellSugar(Player player)
+        //{
+        //    int amountToBuy = UserInterface.AmountToBuy("Sugar");
+        //    double costForSugar = sugarPrice * amountToBuy;
+        //    if (CheckPlayerWallet(player, 7))
+        //    {
+
+        //    }
+        //    player.wallet.money = player.wallet.money - (sugarPrice * amountToBuy);
+        //    for (int i = 0; i < amountToBuy; i++)
+        //    {
+        //        player.inventory.AddSugar();
+        //    }
+        //}
+        public bool CheckPlayerWallet(Player player, double totalCost)
         {
-            if (player.wallet.money < UserInterface.AmountToBuy(){
-
+            if (player.wallet.money < totalCost)
+            {
+                UserInterface.TellNotEnoughMoney();
+                return false;
             }
+            else return true;
         }
+
     }
 }

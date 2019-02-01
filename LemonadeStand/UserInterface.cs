@@ -33,7 +33,7 @@ namespace LemonadeStand
             Console.WriteLine($"Today's weather is {day.weather.currentWeather}");           
         }
         
-        public static void TellNotEnoughMoney(Player player)
+        public static void TellNotEnoughMoney()
         {
             Console.WriteLine("You don't have enough money");
         }
