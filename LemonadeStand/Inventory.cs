@@ -7,7 +7,8 @@ namespace LemonadeStand
 {
     public class Inventory
     {
-
+        //list of the list of ingredient objects, then do the list.Count for each item
+        //would have to add an ingredient object to the index of the larger list?
         public List<Lemon> lemonsInInventory = new List<Lemon>() { };
         public List<IceCube> iceCubesInInventory = new List<IceCube>() { };
         public List<Sugar> sugarInInventory = new List<Sugar>() { };

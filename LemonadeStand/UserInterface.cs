@@ -40,8 +40,8 @@ namespace LemonadeStand
         public static int AmountToBuy(string ingredient)
         {
             Console.WriteLine($"Enter Amount of {ingredient} to buy");
-            int ammount = Convert.ToInt32(Console.ReadLine());
-            return ammount;
+            int amount = Convert.ToInt32(Console.ReadLine());
+            return amount;
         }
 
        
@@ -93,10 +93,7 @@ namespace LemonadeStand
 
 
 
-        //public void CalculateProfit()
-        //{
-        //    //cups sold * price of cups
-        //}
+        
     }
 }
 

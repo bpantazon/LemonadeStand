@@ -9,6 +9,7 @@ namespace LemonadeStand
     {
         public Inventory inventory;
         public Wallet wallet;
+        public int soldLemonade;
         public Player()
         {
             inventory = new Inventory();

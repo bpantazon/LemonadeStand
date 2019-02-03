@@ -30,19 +30,31 @@ namespace LemonadeStand
             
         public void SellCups(Player player)
         {
-            player.wallet.money = player.wallet.money - (cupsPrice * UserInterface.AmountToBuy("Cups"));
-            for (int i = 0; i < UserInterface.AmountToBuy("Cups"); i++)
+            int amountToBuy = UserInterface.AmountToBuy("Cups");
+            double costForCups = cupsPrice * amountToBuy;
+            if (CheckPlayerWallet(player, costForCups) == true)
             {
-                player.inventory.AddCups();
+                player.wallet.money = player.wallet.money - (cupsPrice * UserInterface.AmountToBuy("Cups"));
+                for (int i = 0; i < UserInterface.AmountToBuy("Cups"); i++)
+                {
+                    player.inventory.AddCups();
+                }
             }
+            
 
         }
         public void SellIce(Player player)
         {
-            player.wallet.money = player.wallet.money - (icePrice * UserInterface.AmountToBuy("Ice"));
-            for (int i = 0; i < UserInterface.AmountToBuy("Ice"); i++)
+            int amountToBuy = UserInterface.AmountToBuy("Ice");
+            double costForIce = icePrice * amountToBuy;
+            if (CheckPlayerWallet(player, costForIce) == true)
             {
-                player.inventory.AddIceCubes();
+                player.wallet.money = player.wallet.money - (icePrice * UserInterface.AmountToBuy("Ice"));
+                for (int i = 0; i < UserInterface.AmountToBuy("Ice"); i++)
+                {
+                    player.inventory.AddIceCubes();
+                }
+
             }
             
         }
@@ -51,7 +63,7 @@ namespace LemonadeStand
         {
             int amountToBuy = UserInterface.AmountToBuy("Lemons");
             double costForLemons = lemonPrice * amountToBuy;
-            if (CheckPlayerWallet(player, costForLemons))
+            if (CheckPlayerWallet(player, costForLemons) == true)
             {
                 player.wallet.money = player.wallet.money - (lemonPrice * UserInterface.AmountToBuy("Lemons"));
                 for (int i = 0; i < UserInterface.AmountToBuy("Lemons"); i++)
@@ -67,7 +79,7 @@ namespace LemonadeStand
         {
             int amountToBuy = UserInterface.AmountToBuy("Sugar");
             double costForSugar = sugarPrice * amountToBuy;
-            if (CheckPlayerWallet(player, costForSugar))
+            if (CheckPlayerWallet(player, costForSugar) == true)
             {
                 player.wallet.money = player.wallet.money - (sugarPrice * amountToBuy);
                 for (int i = 0; i < amountToBuy; i++)

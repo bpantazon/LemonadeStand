@@ -5,7 +5,9 @@ using System.Text;
 
 namespace LemonadeStand
 {
-    public class Sugar : Ingredient
+    public class Ingredient
     {
+        private int name;
+        private int price;
     }
 }

@@ -7,11 +7,26 @@ namespace LemonadeStand
 {
     public class Stand
     {
-        private int profit;
-        private int cupsSold;
-        public void CalculateProfit()
+        
+        public double profit;
+        public double priceOfLemonade;
+
+        public Stand()
         {
-            //profit = cupsSold * setPrice; 
+
         }
+        //public double CalculateProfit(Player player)
+        //{
+        //    profit = priceOfLemonade * player.soldLemonade;
+        //    return profit;
+        //}
+        public double SetLemonadePrice()
+        {
+            Console.WriteLine("How much will you charge per cup of lemonade?");
+            priceOfLemonade = Convert.ToDouble(Console.ReadLine());
+            return priceOfLemonade;
+        }
+
+        
     }
 }
