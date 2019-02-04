@@ -9,7 +9,7 @@ namespace LemonadeStand
     public class Recipe
     {
         //place to put made cups of recipe. probably in a list
-        public double lemonadePrice;
+        public decimal lemonadePrice;
 
     }
 }

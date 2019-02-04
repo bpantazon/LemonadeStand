@@ -12,7 +12,7 @@ namespace LemonadeStand
         public int PreferredRecipe;
         public int FavoriteWeather;
         public bool willBuy;
-        
+       
         public void BuyLemonade()
         {
             
@@ -21,7 +21,7 @@ namespace LemonadeStand
         
         public virtual void GenerateChancesOfBuying(Weather weather, Recipe recipe, Player player)
         {
-            if (weather.currentWeather == "bad" && recipe.lemonadePrice > 0.15)
+            if (weather.currentWeather == "bad" && recipe.lemonadePrice > 0.15m)
             {
                 Random rand = new Random();
                 int buy = rand.Next(1, 20);
@@ -30,7 +30,7 @@ namespace LemonadeStand
                     player.soldLemonade = player.soldLemonade + 1;
                 }
             }
-            else if (weather.currentWeather == "bad" && recipe.lemonadePrice <= 0.15)
+            else if (weather.currentWeather == "bad" && recipe.lemonadePrice <= 0.15m)
             {
                 Random rand = new Random();
                 int buy = rand.Next(1, 7);
@@ -39,7 +39,7 @@ namespace LemonadeStand
                     player.soldLemonade = player.soldLemonade + 1;
                 }
             }
-            else if (weather.currentWeather == "fair" && recipe.lemonadePrice > 0.20)
+            else if (weather.currentWeather == "fair" && recipe.lemonadePrice > 0.20m)
             {
                 Random rand = new Random();
                 int buy = rand.Next(1, 13);
@@ -48,7 +48,7 @@ namespace LemonadeStand
                     player.soldLemonade = player.soldLemonade + 1;
                 }
             }
-            else if (weather.currentWeather == "fair" && recipe.lemonadePrice <= 0.20)
+            else if (weather.currentWeather == "fair" && recipe.lemonadePrice <= 0.20m)
             {
                 Random rand = new Random();
                 int buy = rand.Next(1, 5);
@@ -57,7 +57,7 @@ namespace LemonadeStand
                     player.soldLemonade = player.soldLemonade + 1;
                 }
             }
-            else if (weather.currentWeather == "good" && recipe.lemonadePrice > 0.35)
+            else if (weather.currentWeather == "good" && recipe.lemonadePrice > 0.35m)
             {
                 Random rand = new Random();
                 int buy = rand.Next(1, 6);
@@ -66,7 +66,7 @@ namespace LemonadeStand
                     player.soldLemonade = player.soldLemonade + 1;
                 }
             }
-            else if (weather.currentWeather == "good" && recipe.lemonadePrice <= 0.35)
+            else if (weather.currentWeather == "good" && recipe.lemonadePrice <= 0.35m)
             {
                 Random rand = new Random();
                 int buy = rand.Next(1, 3);

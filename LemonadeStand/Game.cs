@@ -13,11 +13,13 @@ namespace LemonadeStand
         {
             Random random = new Random();
             Day day = new Day();
+            Player player = new Player();
             UserInterface.DisplayRules();
             day.weather.GenerateWeatherConditions(random);
             day.weather.MakeForecast();
             UserInterface.DisplayDay(day);
             UserInterface.DisplayForecast(day);
+            UserInterface.ShowPlayerMoney(player);
             DisplayStore();
         }
 

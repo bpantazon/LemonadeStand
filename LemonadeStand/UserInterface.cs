@@ -28,6 +28,11 @@ namespace LemonadeStand
             Console.WriteLine(thing);
            
         }
+
+        public static void ShowPlayerMoney(Player player)
+        {
+            Console.WriteLine($"Wallet {player.wallet.money}");
+        }
         //public static int GetInput(string thing)
         //{
         //    Console.WriteLine(thing);
@@ -46,8 +51,7 @@ namespace LemonadeStand
             Console.WriteLine("You don't have enough money");
         }
         public static int AmountToBuy(string ingredient)
-        {
-            
+        {           
             Console.WriteLine($"Enter Amount of {ingredient} to buy");           
             int amount = Convert.ToInt32(Console.ReadLine());
             return amount;
@@ -59,10 +63,10 @@ namespace LemonadeStand
             return amountToRecipe;
         }
        
-        public static double SetLemonadePrice(Recipe recipe)
+        public static decimal SetLemonadePrice(Recipe recipe)
         {
             Console.WriteLine("Enter price of your lemonade: ");
-            recipe.lemonadePrice = Convert.ToDouble(Console.ReadLine());
+            recipe.lemonadePrice = Convert.ToDecimal(Console.ReadLine());
             return recipe.lemonadePrice;
         }
       

@@ -8,10 +8,10 @@ namespace LemonadeStand
     public class Store
     {
         
-        public double lemonPrice = 0.1;
-        public double sugarPrice = 0.1;
-        public double cupsPrice = 0.04;
-        public double icePrice = 0.01;
+        public decimal lemonPrice = 0.10m;
+        public decimal sugarPrice = 0.10m;
+        public decimal cupsPrice = 0.04m;
+        public decimal icePrice = 0.01m;
    
 
 
@@ -31,7 +31,7 @@ namespace LemonadeStand
         public void SellCups(Player player)
         {
             int amountToBuy = UserInterface.AmountToBuy("Cups");
-            double costForCups = cupsPrice * amountToBuy;
+            decimal costForCups = cupsPrice * amountToBuy;
             if (CheckPlayerWallet(player, costForCups) == true)
             {
                 player.wallet.money = player.wallet.money - (cupsPrice * UserInterface.AmountToBuy("Cups"));
@@ -46,7 +46,7 @@ namespace LemonadeStand
         public void SellIce(Player player)
         {
             int amountToBuy = UserInterface.AmountToBuy("Ice");
-            double costForIce = icePrice * amountToBuy;
+            decimal costForIce = icePrice * amountToBuy;
             if (CheckPlayerWallet(player, costForIce) == true)
             {
                 player.wallet.money = player.wallet.money - (icePrice * UserInterface.AmountToBuy("Ice"));
@@ -62,7 +62,7 @@ namespace LemonadeStand
         public void SellLemons(Player player)
         {
             int amountToBuy = UserInterface.AmountToBuy("Lemons");
-            double costForLemons = lemonPrice * amountToBuy;
+            decimal costForLemons = lemonPrice * amountToBuy;
             if (CheckPlayerWallet(player, costForLemons) == true)
             {
                 player.wallet.money = player.wallet.money - (lemonPrice * UserInterface.AmountToBuy("Lemons"));
@@ -78,7 +78,7 @@ namespace LemonadeStand
         public void SellSugar(Player player)
         {
             int amountToBuy = UserInterface.AmountToBuy("Sugar");
-            double costForSugar = sugarPrice * amountToBuy;
+            decimal costForSugar = sugarPrice * amountToBuy;
             if (CheckPlayerWallet(player, costForSugar) == true)
             {
                 player.wallet.money = player.wallet.money - (sugarPrice * amountToBuy);
@@ -104,7 +104,7 @@ namespace LemonadeStand
         //        player.inventory.AddSugar();
         //    }
         //}
-        public bool CheckPlayerWallet(Player player, double totalCost)
+        public bool CheckPlayerWallet(Player player, decimal totalCost)
         {
             if (player.wallet.money < totalCost)
             {

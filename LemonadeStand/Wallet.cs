@@ -7,10 +7,10 @@ namespace LemonadeStand
 {
     public class Wallet
     {
-        public double money;
+        public decimal money;
         //constructor
     
-        public Wallet(double money)
+        public Wallet(decimal money)
         {
             this.money = money;
         }

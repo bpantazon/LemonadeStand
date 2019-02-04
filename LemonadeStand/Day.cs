@@ -9,7 +9,7 @@ namespace LemonadeStand
     {
 
         public Weather weather;
-        public double dayEarnings;
+        public decimal dayEarnings;
         public List<Customer> customersPerDay = new List<Customer>() { };
         //constructor
         public Day()
@@ -17,7 +17,7 @@ namespace LemonadeStand
                 weather = new Weather();
         }
 
-        public double CalculateDayEarnings(Player player, Recipe recipe)
+        public decimal CalculateDayEarnings(Player player, Recipe recipe)
         {
             dayEarnings = player.soldLemonade * recipe.lemonadePrice;
             return dayEarnings;
