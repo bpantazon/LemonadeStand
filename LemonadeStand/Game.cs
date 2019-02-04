@@ -18,9 +18,7 @@ namespace LemonadeStand
             day.weather.MakeForecast();
             UserInterface.DisplayDay(day);
             UserInterface.DisplayForecast(day);
-            
-
-
+            DisplayStore();
         }
 
         public void DisplayStore()

@@ -12,7 +12,7 @@ namespace LemonadeStand
         public int PreferredRecipe;
         public int FavoriteWeather;
         public bool willBuy;
-
+        
         public void BuyLemonade()
         {
             
@@ -24,7 +24,7 @@ namespace LemonadeStand
             if (weather.currentWeather == "bad" && recipe.lemonadePrice > 0.15)
             {
                 Random rand = new Random();
-                int buy = rand.Next(1, 50);
+                int buy = rand.Next(1, 20);
                 if (buy == 1)
                 {
                     player.soldLemonade = player.soldLemonade + 1;
@@ -42,7 +42,7 @@ namespace LemonadeStand
             else if (weather.currentWeather == "fair" && recipe.lemonadePrice > 0.20)
             {
                 Random rand = new Random();
-                int buy = rand.Next(1, 20);
+                int buy = rand.Next(1, 13);
                 if (buy == 1)
                 {
                     player.soldLemonade = player.soldLemonade + 1;

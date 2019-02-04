@@ -47,7 +47,8 @@ namespace LemonadeStand
         }
         public static int AmountToBuy(string ingredient)
         {
-            Console.WriteLine($"Enter Amount of {ingredient} to buy");
+            
+            Console.WriteLine($"Enter Amount of {ingredient} to buy");           
             int amount = Convert.ToInt32(Console.ReadLine());
             return amount;
         }
@@ -58,49 +59,13 @@ namespace LemonadeStand
             return amountToRecipe;
         }
        
-        public static void ChooseRecipe()
+        public static double SetLemonadePrice(Recipe recipe)
         {
-            Console.WriteLine("How many lemons will you add to your recipe?");
-            //lemonsInRecipe = Console.ReadLine();
-            Console.WriteLine("How many cups of sugar will you add to your recipe?");
-            //sugarInRecipe = Console.ReadLine();
-            Console.WriteLine("How many ice cubes will you add to your recipe?");
-            //iceCubesInRecipe = Console.ReadLine();
-            //maybe make madeRecipe into a list to compare with customer preferences
-
+            Console.WriteLine("Enter price of your lemonade: ");
+            recipe.lemonadePrice = Convert.ToDouble(Console.ReadLine());
+            return recipe.lemonadePrice;
         }
-
-
-        //public static int AskToBuyLemons()//slide 9 on static powerpoint?
-        //{
-        //    Console.WriteLine("How many lemons would you like to buy?");
-        //    lemonsBought = int.Parse(Console.ReadLine());
-
-        //    Console.WriteLine("How many cups of sugar would you like to buy?");
-        //    sugarBought = int.Parse(Console.ReadLine());
-        //    return lemonsBought;      
-
-        //}
-        //public static int AskToBuyCups()
-        //{
-        //    Console.WriteLine("How many cups would you like to buy?");
-        //    cupsBought = int.Parse(Console.ReadLine());
-        //    return cupsBought;
-        //}
-        //public static int AskToBuySugar()
-        //{
-        //    Console.WriteLine("How much sugar would you like to buy?");
-        //    sugarBought = int.Parse(Console.ReadLine());
-        //    return sugarBought;
-        //}
-        //public static int AskToBuyIce()
-        //{
-        //    Console.WriteLine("How many ice cubes would you like to buy?");
-        //    iceBought = int.Parse(Console.ReadLine());
-        //    return iceBought;
-        //}
-
-
+      
 
 
 

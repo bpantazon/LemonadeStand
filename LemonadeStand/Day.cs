@@ -10,6 +10,7 @@ namespace LemonadeStand
 
         public Weather weather;
         public double dayEarnings;
+        public List<Customer> customersPerDay = new List<Customer>() { };
         //constructor
         public Day()
         {
@@ -21,10 +22,10 @@ namespace LemonadeStand
             dayEarnings = player.soldLemonade * recipe.lemonadePrice;
             return dayEarnings;
         }
-
+       
         public void AddDayPlayed()
         {
-            UserInterface.DisplayMessage("Thigns were bad");
+            
             
         }
 
@@ -41,7 +42,35 @@ namespace LemonadeStand
             
         }
         
-         //add timer for the day length
+
+        public void MakeCustomers(Weather weather)
+        {
+            if (weather.currentWeather == "bad")
+            {
+                for (int i = 0; i < 15; i++)
+                {
+                    Customer customer = new Customer();
+                    customersPerDay.Add(customer);
+                }
+            }
+            else if (weather.currentWeather == "fair")
+            {
+                for (int i = 0; i < 30; i++)
+                {
+                    Customer customer = new Customer();
+                    customersPerDay.Add(customer);
+                }
+            }
+            else if (weather.currentWeather == "good")
+            {
+                for (int i = 0; i < 50; i++)
+                {
+                    Customer customer = new Customer();
+                    customersPerDay.Add(customer);
+                }
+            }
+        }
+         
         
     }
 }
