@@ -17,6 +17,10 @@ namespace LemonadeStand
         public Lemon lemon { get; set; }
         public IceCube iceCube { get; set; }
         public Sugar sugar { get; set; }
+        public int cupCount;
+        public int lemonCount;
+        public int sugarCount;
+        public int iceCount;
         public Inventory()
         {
 
@@ -45,36 +49,55 @@ namespace LemonadeStand
             Sugar sugar = new Sugar();
             sugarInInventory.Add(sugar);
         }
-        public void SubtractCupFromInventory()
+        public void RemoveCupFromInventory()
         {
-            cupsInInventory.Remove(cup);
+            int amountToRecipe = UserInterface.AskForRecipe("Cups");
+            for (int i = 0; i < amountToRecipe; i++)
+            {
+                cupsInInventory.Remove(cup);
+            }           
         }
-        public void SubtractLemonsFromInventory()
+        public void RemoveLemonsFromInventory()
         {
-            lemonsInInventory.Remove(lemon);
+            int amountToRecipe = UserInterface.AskForRecipe("Lemons");
+            for (int i = 0; i < amountToRecipe; i++)
+            {
+                lemonsInInventory.Remove(lemon);
+            }            
         }
 
-        public void SubtractIceCubesFromInventory()
+        public void RemoveIceCubesFromInventory()
         {
-            iceCubesInInventory.Remove(iceCube);
+            int amountToRecipe = UserInterface.AskForRecipe("Ice");
+            for (int i = 0; i < amountToRecipe; i++)
+            {
+                iceCubesInInventory.Remove(iceCube);
+            }
         }
         public void CountInventoryCups()
         {
-            cupsInInventory.Count();
+           cupCount = cupsInInventory.Count();
         }
         public void CountInventoryLemons()
         {
-            lemonsInInventory.Count();
+            lemonCount = lemonsInInventory.Count();
         }
         public void CountInventoryIceCubes()
         {
-            iceCubesInInventory.Count();
+           iceCount = iceCubesInInventory.Count();
         }
         public void CountInventorySugar()
         {
-            sugarInInventory.Count();
+            sugarCount = sugarInInventory.Count();
         }
-
+        public void ShowInventory()
+        {
+            Console.WriteLine("Cups in inventory: " + cupCount);
+            Console.WriteLine("Lemons in inventory: " + lemonCount);
+            Console.WriteLine("Sugar in inventory: " + sugarCount);
+            Console.WriteLine("Ice cubes in inventory: " + iceCount);
+            Console.ReadLine();
+        }
 
     }
 

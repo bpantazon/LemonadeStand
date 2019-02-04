@@ -51,7 +51,12 @@ namespace LemonadeStand
             int amount = Convert.ToInt32(Console.ReadLine());
             return amount;
         }
-
+        public static int AskForRecipe(string ingredient)
+        {
+            Console.WriteLine($"Enter amount of {ingredient} to add to recipe");
+            int amountToRecipe = Convert.ToInt32(Console.ReadLine());
+            return amountToRecipe;
+        }
        
         public static void ChooseRecipe()
         {

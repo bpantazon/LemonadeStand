@@ -18,7 +18,17 @@ namespace LemonadeStand
             day.weather.MakeForecast();
             UserInterface.DisplayDay(day);
             UserInterface.DisplayForecast(day);
+            
 
+
+        }
+
+        public void DisplayStore()
+        {
+            UserInterface.AmountToBuy("Cups");
+            UserInterface.AmountToBuy("Lemons");
+            UserInterface.AmountToBuy("Sugar");
+            UserInterface.AmountToBuy("Ice");
         }
     }
 }
