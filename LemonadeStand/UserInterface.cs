@@ -11,10 +11,17 @@ namespace LemonadeStand
         public static int cupsBought;
         public static int sugarBought;
         public static int iceBought;
+       
 
-        public static void DisplayForecast(Day day)
+        public static void DisplayRules()
         {
-            Console.WriteLine($"This week's forecast is {day.weather.forecast}");
+            Console.WriteLine("Welcome to Lemonade Stand! Your objective is to sell as many cups of lemonade as possible." + "\n" + "Customers will buy lemonade based on the weather and price per cup." + "\n" + "Choose your recipe and adjust pricing in order to sell the most lemonade.");
+            Console.ReadLine();
+        }
+        public static void DisplayForecast(Day day)
+        {           
+            Console.WriteLine($"This week's forecast is {day.weather.currentForecast}");
+            Console.ReadLine();
         }
         public static void DisplayMessage(string thing)
         {
@@ -30,7 +37,8 @@ namespace LemonadeStand
         //}
         public static void DisplayDay(Day day)
         {
-            Console.WriteLine($"Today's weather is {day.weather.currentWeather}");           
+            Console.WriteLine($"Today's weather is {day.weather.currentWeather}");
+            Console.ReadLine();
         }
         
         public static void TellNotEnoughMoney()

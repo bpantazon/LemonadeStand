@@ -13,29 +13,31 @@ namespace LemonadeStand
         public List<string> weather = new List<string>() { "good", "fair", "bad" };
         public string currentWeather;
         public List<string> forecast = new List<string>() { };
+        public string currentForecast;
 
         public Weather()
         {
-            
+
         }
 
-        public void GenerateWeatherConditions()
+        public void GenerateWeatherConditions(Random random)
         {
-            Random random = new Random();
+           
             int i = random.Next(weather.Count);
             currentWeather = weather[i];
         }
 
-        
+
         public void MakeForecast()
         {
-            
-            for (int j = 0; j < 8; j++)
+            Random random = new Random();
+            for (int j = 0; j < 7; j++)
             {
-                GenerateWeatherConditions();
+                GenerateWeatherConditions(random);
                 forecast.Add(currentWeather);
-                
+                currentForecast = string.Join(", ", forecast.ToArray());
             }
+
         }
     }
 }

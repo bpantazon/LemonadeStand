@@ -11,17 +11,19 @@ namespace LemonadeStand
         public int ChanceOfBuying;
         public int PreferredRecipe;
         public int FavoriteWeather;
+        public bool willBuy;
 
         public void BuyLemonade()
         {
-            //current cups of lemonade - 1
+            
         }
 
-        public virtual void GenerateChancesOfBuying(Weather weather)
+        
+        public virtual void GenerateChancesOfBuying(Weather weather, Recipe recipe)
         {
-            if (weather.currentWeather = "bad")
+            if (weather.currentWeather == "bad" && recipe.lemonadePrice > 0.15)
             {
-
+                
             }
         }
     }

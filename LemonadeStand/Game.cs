@@ -7,44 +7,18 @@ namespace LemonadeStand
 {
     public class Game
     {
-        private int Customers;
-
-        public Day Day
-        {
-            get => default(LemonadeStand.Day);
-            set
-            {
-            }
-        }
-
-        public Player Player
-        {
-            get => default(Player);
-            set
-            {
-            }
-        }
-
-        public Store Store
-        {
-            get => default(Store);
-            set
-            {
-            }
-        }
-
-        public void GenerateCustomers()
-        {
-            throw new System.NotImplementedException();
-        }
+        
 
         public void PlayGame()
         {
-            Store = new Store();
-            Player = new Player();
-            //Store.CheckPlayerWallet(Player);
-            //Player.inventory.AddSugar(Store.sugar);
-            
+            Random random = new Random();
+            Day day = new Day();
+            UserInterface.DisplayRules();
+            day.weather.GenerateWeatherConditions(random);
+            day.weather.MakeForecast();
+            UserInterface.DisplayDay(day);
+            UserInterface.DisplayForecast(day);
+
         }
     }
 }
