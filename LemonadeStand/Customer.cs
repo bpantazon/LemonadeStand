@@ -19,12 +19,63 @@ namespace LemonadeStand
         }
 
         
-        public virtual void GenerateChancesOfBuying(Weather weather, Recipe recipe)
+        public virtual void GenerateChancesOfBuying(Weather weather, Recipe recipe, Player player)
         {
             if (weather.currentWeather == "bad" && recipe.lemonadePrice > 0.15)
             {
-                
+                Random rand = new Random();
+                int buy = rand.Next(1, 50);
+                if (buy == 1)
+                {
+                    player.soldLemonade = player.soldLemonade + 1;
+                }
             }
+            else if (weather.currentWeather == "bad" && recipe.lemonadePrice <= 0.15)
+            {
+                Random rand = new Random();
+                int buy = rand.Next(1, 7);
+                if (buy == 1)
+                {
+                    player.soldLemonade = player.soldLemonade + 1;
+                }
+            }
+            else if (weather.currentWeather == "fair" && recipe.lemonadePrice > 0.20)
+            {
+                Random rand = new Random();
+                int buy = rand.Next(1, 20);
+                if (buy == 1)
+                {
+                    player.soldLemonade = player.soldLemonade + 1;
+                }
+            }
+            else if (weather.currentWeather == "fair" && recipe.lemonadePrice <= 0.20)
+            {
+                Random rand = new Random();
+                int buy = rand.Next(1, 5);
+                if (buy == 1)
+                {
+                    player.soldLemonade = player.soldLemonade + 1;
+                }
+            }
+            else if (weather.currentWeather == "good" && recipe.lemonadePrice > 0.35)
+            {
+                Random rand = new Random();
+                int buy = rand.Next(1, 6);
+                if (buy == 1)
+                {
+                    player.soldLemonade = player.soldLemonade + 1;
+                }
+            }
+            else if (weather.currentWeather == "good" && recipe.lemonadePrice <= 0.35)
+            {
+                Random rand = new Random();
+                int buy = rand.Next(1, 3);
+                if (buy == 1)
+                {
+                    player.soldLemonade = player.soldLemonade + 1;
+                }
+            }
+            
         }
     }
 }
