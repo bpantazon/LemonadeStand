@@ -13,6 +13,11 @@ namespace LemonadeStand
         public int FavoriteWeather;
         public bool willBuy;
        
+
+        public Customer()
+        {
+
+        }
         public void BuyLemonade()
         {
             
@@ -28,6 +33,7 @@ namespace LemonadeStand
                 if (buy == 1)
                 {
                     player.soldLemonade = player.soldLemonade + 1;
+                    willBuy = true;
                 }
             }
             else if (weather.currentWeather == "bad" && recipe.lemonadePrice <= 0.15m)
@@ -37,6 +43,7 @@ namespace LemonadeStand
                 if (buy == 1)
                 {
                     player.soldLemonade = player.soldLemonade + 1;
+                    willBuy = true;
                 }
             }
             else if (weather.currentWeather == "fair" && recipe.lemonadePrice > 0.20m)
@@ -46,6 +53,7 @@ namespace LemonadeStand
                 if (buy == 1)
                 {
                     player.soldLemonade = player.soldLemonade + 1;
+                    willBuy = true;
                 }
             }
             else if (weather.currentWeather == "fair" && recipe.lemonadePrice <= 0.20m)
@@ -55,6 +63,7 @@ namespace LemonadeStand
                 if (buy == 1)
                 {
                     player.soldLemonade = player.soldLemonade + 1;
+                    willBuy = true;
                 }
             }
             else if (weather.currentWeather == "good" && recipe.lemonadePrice > 0.35m)
@@ -64,6 +73,7 @@ namespace LemonadeStand
                 if (buy == 1)
                 {
                     player.soldLemonade = player.soldLemonade + 1;
+                    willBuy = true;
                 }
             }
             else if (weather.currentWeather == "good" && recipe.lemonadePrice <= 0.35m)
@@ -73,6 +83,7 @@ namespace LemonadeStand
                 if (buy == 1)
                 {
                     player.soldLemonade = player.soldLemonade + 1;
+                    willBuy = true;
                 }
             }
             

@@ -18,6 +18,11 @@ namespace LemonadeStand
             Console.WriteLine("Welcome to Lemonade Stand! Your objective is to sell as many cups of lemonade as possible." + "\n" + "Customers will buy lemonade based on the weather and price per cup." + "\n" + "Choose your recipe and adjust pricing in order to sell the most lemonade.");
             Console.ReadLine();
         }
+        public static void ShowIngredientPrice(Store store)
+        {
+            Console.WriteLine($"Cost per ingredient: \n Lemons:  { store.lemonPrice } \n Sugar:  { store.sugarPrice } \n Cups: { store.cupsPrice } \n Ice Cubes: {store.icePrice } ");
+            Console.ReadLine();
+        }
         public static void DisplayForecast(Day day)
         {           
             Console.WriteLine($"This week's forecast is {day.weather.currentForecast}");
@@ -52,10 +57,11 @@ namespace LemonadeStand
         }
         public static int AmountToBuy(string ingredient)
         {           
-            Console.WriteLine($"Enter Amount of {ingredient} to buy");           
+            Console.WriteLine($"How many {ingredient} would you like to buy?");  
             int amount = Convert.ToInt32(Console.ReadLine());
             return amount;
         }
+       
         public static int AskForRecipe(string ingredient)
         {
             Console.WriteLine($"Enter amount of {ingredient} to add to recipe");

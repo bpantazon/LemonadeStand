@@ -20,6 +20,7 @@ namespace LemonadeStand
             UserInterface.DisplayDay(day);
             UserInterface.DisplayForecast(day);
             UserInterface.ShowPlayerMoney(player);
+            player.inventory.ShowInventory();
             DisplayStore();
         }
 
