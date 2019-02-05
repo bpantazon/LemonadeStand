@@ -33,10 +33,17 @@ namespace LemonadeStand
             Console.WriteLine(thing);
            
         }
+        public static void ShowPlayerStats(Player player)
+        {
+            ShowPlayerMoney(player);
+            
+            player.inventory.ShowInventory();
 
+        }
         public static void ShowPlayerMoney(Player player)
         {
             Console.WriteLine($"Wallet {player.wallet.money}");
+            
         }
         //public static int GetInput(string thing)
         //{
@@ -45,7 +52,7 @@ namespace LemonadeStand
         //    return Convert.ToInt32(otherThing);
 
         //}
-        public static void DisplayDay(Day day)
+        public static void DisplayCurrentWeather(Day day)
         {
             Console.WriteLine($"Today's weather is {day.weather.currentWeather}");
             Console.ReadLine();
@@ -56,7 +63,8 @@ namespace LemonadeStand
             Console.WriteLine("You don't have enough money");
         }
         public static int AmountToBuy(string ingredient)
-        {           
+        {
+
             Console.WriteLine($"How many {ingredient} would you like to buy?");  
             int amount = Convert.ToInt32(Console.ReadLine());
             return amount;
@@ -75,13 +83,16 @@ namespace LemonadeStand
             recipe.lemonadePrice = Convert.ToDecimal(Console.ReadLine());
             return recipe.lemonadePrice;
         }
-      
+
+        public static void ShowFinalResults(Player player)
+        {
+            Console.WriteLine($"The week is over. You sold { player.soldLemonade } cups of lemonade. You earned {player.totalProfit}.");
+        }
 
 
 
 
 
-        
     }
 }
 

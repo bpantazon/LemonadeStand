@@ -14,22 +14,42 @@ namespace LemonadeStand
             Random random = new Random();
             Day day = new Day();
             Player player = new Player();
-            UserInterface.DisplayRules();
-            day.weather.GenerateWeatherConditions(random);
-            day.weather.MakeForecast();
-            UserInterface.DisplayDay(day);
-            UserInterface.DisplayForecast(day);
-            UserInterface.ShowPlayerMoney(player);
-            player.inventory.ShowInventory();
-            DisplayStore();
+            Store store = new Store();
+            if (day.daysPlayed < 7)
+            {
+                UserInterface.DisplayRules();
+                day.weather.GenerateWeatherConditions(random);
+                day.weather.MakeForecast();
+                UserInterface.DisplayForecast(day);
+                UserInterface.DisplayCurrentWeather(day);                
+                UserInterface.ShowPlayerStats(player);
+                UserInterface.ShowIngredientPrice(store);
+                DisplayStore(store, player);
+                
+               
+            }
+            else
+            {
+                UserInterface.ShowFinalResults(player);
+            }
+           
         }
 
-        public void DisplayStore()
+        public void DisplayStore(Store store, Player player)
         {
-            UserInterface.AmountToBuy("Cups");
-            UserInterface.AmountToBuy("Lemons");
-            UserInterface.AmountToBuy("Sugar");
-            UserInterface.AmountToBuy("Ice");
+           
+            store.SellCups(player);
+            player.inventory.CountInventoryCups();
+            UserInterface.ShowPlayerStats(player);
+            store.SellLemons(player);
+            player.inventory.CountInventoryLemons();
+            UserInterface.ShowPlayerStats(player);
+            store.SellSugar(player);
+            player.inventory.CountInventorySugar();
+            UserInterface.ShowPlayerStats(player);
+            store.SellIce(player);
+            player.inventory.CountInventoryIceCubes();
+            UserInterface.ShowPlayerStats(player);
         }
     }
 }

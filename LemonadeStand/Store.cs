@@ -34,8 +34,8 @@ namespace LemonadeStand
             decimal costForCups = cupsPrice * amountToBuy;
             if (CheckPlayerWallet(player, costForCups) == true)
             {
-                player.wallet.money = player.wallet.money - (cupsPrice * UserInterface.AmountToBuy("Cups"));
-                for (int i = 0; i < UserInterface.AmountToBuy("Cups"); i++)
+                player.wallet.money = player.wallet.money - (cupsPrice * amountToBuy);
+                for (int i = 0; i < amountToBuy; i++)
                 {
                     player.inventory.AddCups();
                 }
@@ -49,8 +49,8 @@ namespace LemonadeStand
             decimal costForIce = icePrice * amountToBuy;
             if (CheckPlayerWallet(player, costForIce) == true)
             {
-                player.wallet.money = player.wallet.money - (icePrice * UserInterface.AmountToBuy("Ice"));
-                for (int i = 0; i < UserInterface.AmountToBuy("Ice"); i++)
+                player.wallet.money = player.wallet.money - (icePrice * amountToBuy);
+                for (int i = 0; i < amountToBuy; i++)
                 {
                     player.inventory.AddIceCubes();
                 }
@@ -65,8 +65,8 @@ namespace LemonadeStand
             decimal costForLemons = lemonPrice * amountToBuy;
             if (CheckPlayerWallet(player, costForLemons) == true)
             {
-                player.wallet.money = player.wallet.money - (lemonPrice * UserInterface.AmountToBuy("Lemons"));
-                for (int i = 0; i < UserInterface.AmountToBuy("Lemons"); i++)
+                player.wallet.money = player.wallet.money - (lemonPrice * amountToBuy);
+                for (int i = 0; i < amountToBuy; i++)
                 {
                     player.inventory.AddLemons();
                 }

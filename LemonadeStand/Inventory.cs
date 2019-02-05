@@ -74,22 +74,35 @@ namespace LemonadeStand
                 iceCubesInInventory.Remove(iceCube);
             }
         }
-        public void CountInventoryCups()
+        
+        public int CountInventoryCups()
         {
            cupCount = cupsInInventory.Count();
+           return cupCount;
         }
-        public void CountInventoryLemons()
+        public int CountInventoryLemons()
         {
             lemonCount = lemonsInInventory.Count();
+            return lemonCount;
         }
-        public void CountInventoryIceCubes()
+        public int CountInventoryIceCubes()
         {
            iceCount = iceCubesInInventory.Count();
+           return iceCount;
         }
-        public void CountInventorySugar()
+        public int CountInventorySugar()
         {
             sugarCount = sugarInInventory.Count();
+            return sugarCount;
         }
+        public void TakeInventory()
+        {
+            CountInventoryCups();
+            CountInventoryLemons();
+            CountInventoryIceCubes();
+            CountInventorySugar();
+        }
+        //not adding or counting ingredients in inventory
         public void ShowInventory()
         {
             Console.WriteLine("Cups in inventory: " + cupCount);

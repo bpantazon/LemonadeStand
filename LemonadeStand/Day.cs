@@ -12,6 +12,7 @@ namespace LemonadeStand
         public decimal dayEarnings;
         public List<Customer> customersPerDay = new List<Customer>() { };
         public int daysPlayed;
+        public decimal dayProfit;
         //constructor
         public Day()
         {
@@ -23,7 +24,11 @@ namespace LemonadeStand
             dayEarnings = player.soldLemonade * recipe.lemonadePrice;
             return dayEarnings;
         }
-       
+        public decimal CalculateProfit(Player player, Recipe recipe)
+        {
+            player.totalProfit = player.totalProfit + dayEarnings;
+            return player.totalProfit;
+        }
         public void DayCounter()
         {
             daysPlayed = 0;
@@ -73,13 +78,13 @@ namespace LemonadeStand
             }
         }
 
-        public void CheckIfCustomerBought()
-        {
-            for (int i = 0; i < customersPerDay.Count; i++)
-            {
+        //public void CheckIfCustomerBought()
+        //{
+        //    for (int i = 0; i < customersPerDay.Count; i++)
+        //    {
                
-            }
-        }
+        //    }
+        //}
         //how to determine when day is over?
         //counter that moves through list of customers, checking if they will buy lemonade
         //	- need to make chancesOfBuying into something that can be compared

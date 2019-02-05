@@ -10,10 +10,12 @@ namespace LemonadeStand
         public Inventory inventory;
         public Wallet wallet;
         public int soldLemonade;
+        public decimal totalProfit;
         public Player()
         {
             inventory = new Inventory();
             wallet = new Wallet(20.00m);
+            
         }
    
        
