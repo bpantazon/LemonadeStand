@@ -33,6 +33,7 @@ namespace LemonadeStand
                 if (buy == 1)
                 {
                     player.soldLemonade = player.soldLemonade + 1;
+                    player.inventory.RemoveCupFromInventory();
                     willBuy = true;
                 }
             }
@@ -43,6 +44,7 @@ namespace LemonadeStand
                 if (buy == 1)
                 {
                     player.soldLemonade = player.soldLemonade + 1;
+                    player.inventory.RemoveCupFromInventory();
                     willBuy = true;
                 }
             }
@@ -53,6 +55,7 @@ namespace LemonadeStand
                 if (buy == 1)
                 {
                     player.soldLemonade = player.soldLemonade + 1;
+                    player.inventory.RemoveCupFromInventory();
                     willBuy = true;
                 }
             }
@@ -63,6 +66,7 @@ namespace LemonadeStand
                 if (buy == 1)
                 {
                     player.soldLemonade = player.soldLemonade + 1;
+                    player.inventory.RemoveCupFromInventory();
                     willBuy = true;
                 }
             }
@@ -73,6 +77,7 @@ namespace LemonadeStand
                 if (buy == 1)
                 {
                     player.soldLemonade = player.soldLemonade + 1;
+                    player.inventory.RemoveCupFromInventory();
                     willBuy = true;
                 }
             }
@@ -83,6 +88,7 @@ namespace LemonadeStand
                 if (buy == 1)
                 {
                     player.soldLemonade = player.soldLemonade + 1;
+                    player.inventory.RemoveCupFromInventory();
                     willBuy = true;
                 }
             }

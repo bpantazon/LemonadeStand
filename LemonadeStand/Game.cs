@@ -25,7 +25,9 @@ namespace LemonadeStand
                 UserInterface.ShowPlayerStats(player);
                 UserInterface.ShowIngredientPrice(store);
                 DisplayStore(store, player);
-                
+                UserInterface.AskForRecipe("Lemons");
+                UserInterface.AskForRecipe("Sugar");
+                UserInterface.AskForRecipe("Ice Cubes");
                
             }
             else
