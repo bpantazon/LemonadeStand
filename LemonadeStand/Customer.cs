@@ -11,7 +11,7 @@ namespace LemonadeStand
         public int ChanceOfBuying;
         public int PreferredRecipe;
         public int FavoriteWeather;
-        public bool willBuy;
+        
         public Random rand;
 
         public Customer(Random rand)
@@ -31,9 +31,9 @@ namespace LemonadeStand
                     int buy = rand.Next(1, 5);
                     if (buy == 1)
                     {
-                        player.soldLemonade = player.soldLemonade + 1;
+                        player.soldLemonade++;
                         player.inventory.RemoveCupFromInventory();
-                        willBuy = true;
+                        
                     }
                 }
                 else if (recipe.lemonadePrice < 0.15m)
@@ -42,9 +42,9 @@ namespace LemonadeStand
                     int buy = rand.Next(1, 3);
                     if (buy == 1)
                     {
-                        player.soldLemonade = player.soldLemonade + 1;
+                        player.soldLemonade++;
                         player.inventory.RemoveCupFromInventory();
-                        willBuy = true;
+                        
                     }
                 }
             }
@@ -56,9 +56,9 @@ namespace LemonadeStand
                     int buy = rand.Next(1, 3);
                     if (buy == 1)
                     {
-                        player.soldLemonade = player.soldLemonade + 1;
+                        player.soldLemonade++;
                         player.inventory.RemoveCupFromInventory();
-                        willBuy = true;
+                       
                     }
                 }
                 else if (recipe.lemonadePrice <= 0.20m)
@@ -67,9 +67,9 @@ namespace LemonadeStand
                     int buy = rand.Next(1, 2);
                     if (buy == 1)
                     {
-                        player.soldLemonade = player.soldLemonade + 1;
+                        player.soldLemonade++;
                         player.inventory.RemoveCupFromInventory();
-                        willBuy = true;
+                        
                     }
                 }
             }
@@ -81,9 +81,9 @@ namespace LemonadeStand
                     int buy = rand.Next(1, 3);
                     if (buy == 1)
                     {
-                        player.soldLemonade = player.soldLemonade + 1;
+                        player.soldLemonade++;
                         player.inventory.RemoveCupFromInventory();
-                        willBuy = true;
+                       
                     }
                 }
                 else if (recipe.lemonadePrice <= 0.35m)
@@ -94,7 +94,7 @@ namespace LemonadeStand
                     {
                         player.soldLemonade++;
                         player.inventory.RemoveCupFromInventory();
-                        willBuy = true;
+                        
                     }
                 }
 

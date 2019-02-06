@@ -7,8 +7,8 @@ namespace LemonadeStand
 {
     public class Game
     {
-        
 
+        public int daysPlayed = 0;
         public void PlayGame()
         {
             Random random = new Random();
@@ -16,10 +16,10 @@ namespace LemonadeStand
             Player player = new Player(0);
             Store store = new Store();
             Recipe recipe = new Recipe();
-            //for (day.daysPlayed = 0; day.daysPlayed < 7; day.daysPlayed = day.daysPlayed + 1)
-            if (day.daysPlayed < 7)
+            UserInterface.DisplayRules();
+            for (daysPlayed = 0; daysPlayed < 7; daysPlayed++)
             {
-                UserInterface.DisplayRules();
+                
                 day.weather.GenerateWeatherConditions(random);
                 day.weather.MakeForecast();
                 UserInterface.DisplayForecast(day);
@@ -36,19 +36,12 @@ namespace LemonadeStand
                 day.CalculateProfit(player, recipe);
                 //dear future ben, calculate the actual profit. Do something with dayProfit and the cost of the ingredients
                 day.DisplayPlayerEarnings(player);
-                day.DayCounter();             
-            }
-            else
-            {
-                UserInterface.ShowFinalResults(player);
-            }
+                
+            }        
+            UserInterface.ShowFinalResults(player);
+            
            
-        }
-
-        public void PlayDay()
-        {
-
-        }
+        }      
 
         public void DisplayStore(Store store, Player player)
         {
