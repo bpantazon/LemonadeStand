@@ -11,7 +11,7 @@ namespace LemonadeStand
         public static int cupsBought;
         public static int sugarBought;
         public static int iceBought;
-       
+        
 
         public static void DisplayRules()
         {
@@ -76,14 +76,26 @@ namespace LemonadeStand
             int amountToRecipe = Convert.ToInt32(Console.ReadLine());
             return amountToRecipe;
         }
-       
+        //public static void GetRecipe()
+        //{
+        //    AskForRecipe("Lemons");
+        //    AskForRecipe("Sugar");
+        //    AskForRecipe("Ice Cubes");
+        //}
+        public static void MakeRecipe(Player player)
+        {
+            player.inventory.RemoveLemonsFromInventory();
+            player.inventory.RemoveSugarFromInventory();
+            player.inventory.RemoveIceCubesFromInventory();
+
+        }
         public static decimal SetLemonadePrice(Recipe recipe)
         {
-            Console.WriteLine("Enter price of your lemonade: ");
+            Console.WriteLine("Enter price of your lemonade in cents: ");
             recipe.lemonadePrice = Convert.ToDecimal(Console.ReadLine());
             return recipe.lemonadePrice;
         }
-
+        
         public static void ShowFinalResults(Player player)
         {
             Console.WriteLine($"The week is over. You sold { player.soldLemonade } cups of lemonade. You earned {player.totalProfit}.");

@@ -12,87 +12,105 @@ namespace LemonadeStand
         public int PreferredRecipe;
         public int FavoriteWeather;
         public bool willBuy;
+        public Random rand;
+
+        public Customer(Random rand)
+        {
+
+        }
        
 
-        public Customer()
-        {
-
-        }
-        public void BuyLemonade()
-        {
-            
-        }
-
         
-        public virtual void GenerateChancesOfBuying(Weather weather, Recipe recipe, Player player)
+        public void GenerateChancesOfBuying(Weather weather, Recipe recipe, Player player, Random rand)
         {
-            if (weather.currentWeather == "bad" && recipe.lemonadePrice > 0.15m)
+            if (weather.currentWeather == "bad")
             {
-                Random rand = new Random();
-                int buy = rand.Next(1, 20);
-                if (buy == 1)
+                if (recipe.lemonadePrice > 0.15m)
                 {
-                    player.soldLemonade = player.soldLemonade + 1;
-                    player.inventory.RemoveCupFromInventory();
-                    willBuy = true;
+                    
+                    int buy = rand.Next(1, 5);
+                    if (buy == 1)
+                    {
+                        player.soldLemonade = player.soldLemonade + 1;
+                        player.inventory.RemoveCupFromInventory();
+                        willBuy = true;
+                    }
+                }
+                else if (recipe.lemonadePrice < 0.15m)
+                {
+                   
+                    int buy = rand.Next(1, 3);
+                    if (buy == 1)
+                    {
+                        player.soldLemonade = player.soldLemonade + 1;
+                        player.inventory.RemoveCupFromInventory();
+                        willBuy = true;
+                    }
                 }
             }
-            else if (weather.currentWeather == "bad" && recipe.lemonadePrice <= 0.15m)
+            else if (weather.currentWeather == "fair")
             {
-                Random rand = new Random();
-                int buy = rand.Next(1, 7);
-                if (buy == 1)
+                if (recipe.lemonadePrice > 0.20m)
                 {
-                    player.soldLemonade = player.soldLemonade + 1;
-                    player.inventory.RemoveCupFromInventory();
-                    willBuy = true;
+                   
+                    int buy = rand.Next(1, 3);
+                    if (buy == 1)
+                    {
+                        player.soldLemonade = player.soldLemonade + 1;
+                        player.inventory.RemoveCupFromInventory();
+                        willBuy = true;
+                    }
+                }
+                else if (recipe.lemonadePrice <= 0.20m)
+                {
+                    
+                    int buy = rand.Next(1, 2);
+                    if (buy == 1)
+                    {
+                        player.soldLemonade = player.soldLemonade + 1;
+                        player.inventory.RemoveCupFromInventory();
+                        willBuy = true;
+                    }
                 }
             }
-            else if (weather.currentWeather == "fair" && recipe.lemonadePrice > 0.20m)
+            else if (weather.currentWeather == "good")
             {
-                Random rand = new Random();
-                int buy = rand.Next(1, 13);
-                if (buy == 1)
+                if (recipe.lemonadePrice > 0.35m)
                 {
-                    player.soldLemonade = player.soldLemonade + 1;
-                    player.inventory.RemoveCupFromInventory();
-                    willBuy = true;
+                   
+                    int buy = rand.Next(1, 3);
+                    if (buy == 1)
+                    {
+                        player.soldLemonade = player.soldLemonade + 1;
+                        player.inventory.RemoveCupFromInventory();
+                        willBuy = true;
+                    }
                 }
-            }
-            else if (weather.currentWeather == "fair" && recipe.lemonadePrice <= 0.20m)
-            {
-                Random rand = new Random();
-                int buy = rand.Next(1, 5);
-                if (buy == 1)
+                else if (recipe.lemonadePrice <= 0.35m)
                 {
-                    player.soldLemonade = player.soldLemonade + 1;
-                    player.inventory.RemoveCupFromInventory();
-                    willBuy = true;
+                   
+                    int buy = rand.Next(1, 2);
+                    if (buy == 1)
+                    {
+                        player.soldLemonade++;
+                        player.inventory.RemoveCupFromInventory();
+                        willBuy = true;
+                    }
                 }
+
+
+
             }
-            else if (weather.currentWeather == "good" && recipe.lemonadePrice > 0.35m)
-            {
-                Random rand = new Random();
-                int buy = rand.Next(1, 6);
-                if (buy == 1)
-                {
-                    player.soldLemonade = player.soldLemonade + 1;
-                    player.inventory.RemoveCupFromInventory();
-                    willBuy = true;
-                }
-            }
-            else if (weather.currentWeather == "good" && recipe.lemonadePrice <= 0.35m)
-            {
-                Random rand = new Random();
-                int buy = rand.Next(1, 3);
-                if (buy == 1)
-                {
-                    player.soldLemonade = player.soldLemonade + 1;
-                    player.inventory.RemoveCupFromInventory();
-                    willBuy = true;
-                }
-            }
+
+
+
+
+
+
+
             
+            
+           
         }
     }
 }

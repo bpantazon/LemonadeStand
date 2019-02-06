@@ -11,11 +11,11 @@ namespace LemonadeStand
         public Wallet wallet;
         public int soldLemonade;
         public decimal totalProfit;
-        public Player()
+        public Player(int soldLemonade)
         {
             inventory = new Inventory();
             wallet = new Wallet(20.00m);
-            
+            this.soldLemonade = soldLemonade;
         }
    
        

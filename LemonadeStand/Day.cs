@@ -29,10 +29,12 @@ namespace LemonadeStand
             player.totalProfit = player.totalProfit + dayEarnings;
             return player.totalProfit;
         }
-        public void DayCounter()
+        
+        public int DayCounter()
         {
             daysPlayed = 0;
             daysPlayed = daysPlayed + 1;
+            return daysPlayed;
             //call this after displaying day earnings or cups sold
         }
 
@@ -41,38 +43,47 @@ namespace LemonadeStand
             if (dayEarnings <= 0)
             {
                 UserInterface.DisplayMessage("You did not make any money today");
+                Console.ReadLine();
             }
             else
             {
                 UserInterface.DisplayMessage($"You earned {dayEarnings}");
+                Console.ReadLine();
             }
             
         }
-        
-
-        public void MakeCustomers(Weather weather)
+        public void ShowCupsSold(Player player)
         {
+            Console.WriteLine($"You sold { player.soldLemonade } cups of lemonade");
+        }
+
+        public void MakeCustomers(Weather weather, Recipe recipe, Player player)
+        {
+            Random rand = new Random();
             if (weather.currentWeather == "bad")
             {
-                for (int i = 0; i < 15; i++)
+                for (int i = 0; i < 50; i++)
                 {
-                    Customer customer = new Customer();
+                    Customer customer = new Customer(rand);
+                    customer.GenerateChancesOfBuying(weather, recipe, player, rand);
                     customersPerDay.Add(customer);
                 }
             }
             else if (weather.currentWeather == "fair")
             {
-                for (int i = 0; i < 30; i++)
+                for (int i = 0; i < 75; i++)
                 {
-                    Customer customer = new Customer();
+                    Customer customer = new Customer(rand);
+                    customer.GenerateChancesOfBuying(weather, recipe, player, rand);
                     customersPerDay.Add(customer);
                 }
             }
             else if (weather.currentWeather == "good")
             {
-                for (int i = 0; i < 50; i++)
+                for (int i = 0; i < 100; i++)
                 {
-                    Customer customer = new Customer();
+                    Customer customer = new Customer(rand);
+                    customer.GenerateChancesOfBuying(weather, recipe, player, rand);
                     customersPerDay.Add(customer);
                 }
             }

@@ -11,5 +11,9 @@ namespace LemonadeStand
         //place to put made cups of recipe. probably in a list
         public decimal lemonadePrice;
 
+        public Recipe()
+        {
+
+        }
     }
 }

@@ -17,6 +17,7 @@ namespace LemonadeStand
         public Lemon lemon { get; set; }
         public IceCube iceCube { get; set; }
         public Sugar sugar { get; set; }
+        public Recipe recipe { get; set; }
         public int cupCount;
         public int lemonCount;
         public int sugarCount;
@@ -50,12 +51,8 @@ namespace LemonadeStand
             sugarInInventory.Add(sugar);
         }
         public void RemoveCupFromInventory()
-        {
-            int amountToRecipe = UserInterface.AskForRecipe("Cups");
-            for (int i = 0; i < amountToRecipe; i++)
-            {
-                cupsInInventory.Remove(cup);
-            }           
+        {           
+            cupsInInventory.RemoveAt(0);
         }
         public void RemoveLemonsFromInventory()
         {
@@ -74,7 +71,14 @@ namespace LemonadeStand
                 iceCubesInInventory.Remove(iceCube);
             }
         }
-        
+        public void RemoveSugarFromInventory()
+        {
+            int amountToRecipe = UserInterface.AskForRecipe("Sugar");
+            for (int i = 0; i < amountToRecipe; i++)
+            {
+                sugarInInventory.Remove(sugar);
+            }
+        }
         public int CountInventoryCups()
         {
            cupCount = cupsInInventory.Count();
