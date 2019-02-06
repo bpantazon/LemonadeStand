@@ -24,8 +24,8 @@ namespace LemonadeStand
                 day.weather.MakeForecast();
                 UserInterface.DisplayForecast(day);
                 UserInterface.DisplayCurrentWeather(day);
-                UserInterface.ShowPlayerStats(player);
                 ShowDaysPlayed();
+                UserInterface.ShowPlayerStats(player);               
                 UserInterface.ShowIngredientPrice(store);
                 DisplayStore(store, player);
                 UserInterface.MakeRecipe(player);

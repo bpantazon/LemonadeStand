@@ -43,7 +43,7 @@ namespace LemonadeStand
         }
         public static void ShowPlayerMoney(Player player)
         {
-            Console.WriteLine($"Wallet {player.wallet.money}");
+            Console.WriteLine($"Wallet ${player.wallet.money}");
             
         }
         //public static int GetInput(string thing)
@@ -66,6 +66,7 @@ namespace LemonadeStand
         public static int AmountToBuy(string ingredient)
         {
             int amount = 0;
+
             Console.WriteLine($"How many {ingredient} would you like to buy?");
                    
             try
@@ -75,9 +76,9 @@ namespace LemonadeStand
             }
             catch (FormatException)
             {
-                Console.WriteLine($"Enter how many { ingredient } you would like to buy");
+                Console.WriteLine($"You didn't enter anything. You bought 0 { ingredient }");
                 Console.ReadLine();
-                AmountToBuy(ingredient);
+                
             }
             return amount;
 
@@ -85,16 +86,22 @@ namespace LemonadeStand
        
         public static int AskForRecipe(string ingredient)
         {
+            int amountToRecipe = 0;
             Console.WriteLine($"Enter amount of {ingredient} to add to recipe");
-            int amountToRecipe = Convert.ToInt32(Console.ReadLine());
+
+            try
+            {
+                amountToRecipe = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine($"You didn't add any { ingredient } to your recipe");
+                Console.ReadLine();
+                
+            }
             return amountToRecipe;
         }
-        //public static void GetRecipe()
-        //{
-        //    AskForRecipe("Lemons");
-        //    AskForRecipe("Sugar");
-        //    AskForRecipe("Ice Cubes");
-        //}
+       
         public static void MakeRecipe(Player player)
         {
             player.inventory.RemoveLemonsFromInventory();
@@ -111,7 +118,7 @@ namespace LemonadeStand
        
         public static void ShowFinalResults(Player player)
         {
-            Console.WriteLine($"The week is over. You sold { player.soldLemonade } cups of lemonade. You earned {player.totalProfit}.");
+            Console.WriteLine($"The week is over. You earned {player.totalProfit}.");
             Console.ReadLine();
         }
 

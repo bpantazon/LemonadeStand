@@ -53,7 +53,7 @@ namespace LemonadeStand
             }
             else
             {
-                UserInterface.DisplayMessage($"You earned {dayEarnings}");
+                UserInterface.DisplayMessage($"You earned ${dayEarnings}");
                 Console.ReadLine();
             }
             

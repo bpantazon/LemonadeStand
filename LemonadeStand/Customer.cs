@@ -7,10 +7,10 @@ namespace LemonadeStand
 {
     public class Customer
     {
-        public int CustomerType;
-        public int ChanceOfBuying;
-        public int PreferredRecipe;
-        public int FavoriteWeather;
+        
+      
+        
+        
         
         public Random rand;
 

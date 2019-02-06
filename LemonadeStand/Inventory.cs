@@ -27,7 +27,7 @@ namespace LemonadeStand
 
         }
 
-
+        //single responsibility - adds a single new cup object to a list of cups
         public void AddCups()
         {
             Cup cup = new Cup();
