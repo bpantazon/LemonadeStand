@@ -25,6 +25,7 @@ namespace LemonadeStand
                 UserInterface.DisplayForecast(day);
                 UserInterface.DisplayCurrentWeather(day);
                 UserInterface.ShowPlayerStats(player);
+                ShowDaysPlayed();
                 UserInterface.ShowIngredientPrice(store);
                 DisplayStore(store, player);
                 UserInterface.MakeRecipe(player);
@@ -36,6 +37,7 @@ namespace LemonadeStand
                 day.CalculateProfit(player, recipe);
                 //calculate the actual profit. Do something with dayProfit and the cost of the ingredients
                 day.DisplayPlayerEarnings(player);
+                day.AddEarningsToPlayer(player);
                 day.ResetDay(player);
                 
             }        
@@ -43,10 +45,12 @@ namespace LemonadeStand
             
            
         }      
-
-        public void DisplayStore(Store store, Player player)
+        public void ShowDaysPlayed()
         {
-           
+            Console.WriteLine($"Days Played: { daysPlayed }");
+        }
+        public void DisplayStore(Store store, Player player)
+        {         
             store.SellCups(player);
             player.inventory.CountInventoryCups();
             UserInterface.ShowPlayerStats(player);

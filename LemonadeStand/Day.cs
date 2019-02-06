@@ -29,12 +29,15 @@ namespace LemonadeStand
             player.totalProfit = player.totalProfit + dayEarnings;
             return player.totalProfit;
         }
-        
+        public void AddEarningsToPlayer(Player player)
+        {
+            player.wallet.money = player.wallet.money + dayEarnings;
+        }
         public void DisplayPlayerEarnings(Player player)
         {
             Console.WriteLine($"Player earnings: { player.totalProfit }");
         }
-
+       
         public void ResetDay(Player player)
         {
             player.soldLemonade = 0;

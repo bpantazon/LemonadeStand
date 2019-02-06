@@ -38,6 +38,7 @@ namespace LemonadeStand
             ShowPlayerMoney(player);
             player.inventory.TakeInventory();
             player.inventory.ShowInventory();
+            
 
         }
         public static void ShowPlayerMoney(Player player)
@@ -64,10 +65,22 @@ namespace LemonadeStand
         }
         public static int AmountToBuy(string ingredient)
         {
+            int amount = 0;
+            Console.WriteLine($"How many {ingredient} would you like to buy?");
+                   
+            try
+            {
+                amount = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine($"How many {ingredient} would you like to buy?");  
-            int amount = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine($"Enter how many { ingredient } you would like to buy");
+                Console.ReadLine();
+                AmountToBuy(ingredient);
+            }
             return amount;
+
         }
        
         public static int AskForRecipe(string ingredient)
@@ -95,10 +108,11 @@ namespace LemonadeStand
             recipe.lemonadePrice = Convert.ToDecimal(Console.ReadLine());
             return recipe.lemonadePrice;
         }
-        
+       
         public static void ShowFinalResults(Player player)
         {
             Console.WriteLine($"The week is over. You sold { player.soldLemonade } cups of lemonade. You earned {player.totalProfit}.");
+            Console.ReadLine();
         }
 
 

@@ -19,10 +19,6 @@ namespace LemonadeStand
         }
    
        
-        public void thing()
-        {
-           
-            var result = inventory.cupsInInventory;
-        }
+        
     }
 }
