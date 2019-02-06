@@ -40,8 +40,6 @@ namespace LemonadeStand
                     player.inventory.AddCups();
                 }
             }
-            
-
         }
         public void SellIce(Player player)
         {

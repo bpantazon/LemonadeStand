@@ -11,7 +11,7 @@ namespace LemonadeStand
         public Weather weather;
         public decimal dayEarnings;
         public List<Customer> customersPerDay = new List<Customer>() { };
-        public int daysPlayed;
+        public int daysPlayed = 0;
         public decimal dayProfit;
         //constructor
         public Day()
@@ -29,11 +29,15 @@ namespace LemonadeStand
             player.totalProfit = player.totalProfit + dayEarnings;
             return player.totalProfit;
         }
-        
+        public void DisplayPlayerEarnings(Player player)
+        {
+            Console.WriteLine($"Player earnings: { player.totalProfit }");
+        }
+
         public int DayCounter()
         {
-            daysPlayed = 0;
-            daysPlayed = daysPlayed + 1;
+
+            daysPlayed++;
             return daysPlayed;
             //call this after displaying day earnings or cups sold
         }

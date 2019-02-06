@@ -33,6 +33,10 @@ namespace LemonadeStand
                 day.ShowCupsSold(player);
                 day.CalculateDayEarnings(player, recipe);
                 day.DisplayDayEarnings();
+                day.CalculateProfit(player, recipe);
+                //dear future ben, calculate the actual profit. Do something with dayProfit and the cost of the ingredients
+                day.DisplayPlayerEarnings(player);
+                day.DayCounter();             
             }
             else
             {
