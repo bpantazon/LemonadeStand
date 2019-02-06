@@ -36,7 +36,7 @@ namespace LemonadeStand
         public static void ShowPlayerStats(Player player)
         {
             ShowPlayerMoney(player);
-            
+            player.inventory.TakeInventory();
             player.inventory.ShowInventory();
 
         }

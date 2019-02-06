@@ -29,17 +29,16 @@ namespace LemonadeStand
             player.totalProfit = player.totalProfit + dayEarnings;
             return player.totalProfit;
         }
+        
         public void DisplayPlayerEarnings(Player player)
         {
             Console.WriteLine($"Player earnings: { player.totalProfit }");
         }
 
-        public int DayCounter()
+        public void ResetDay(Player player)
         {
-
-            daysPlayed++;
-            return daysPlayed;
-            //call this after displaying day earnings or cups sold
+            player.soldLemonade = 0;
+            weather.forecast.Clear();
         }
 
         public void DisplayDayEarnings()
@@ -56,6 +55,7 @@ namespace LemonadeStand
             }
             
         }
+        //Single responsibility function of only displaying the number of lemonade the player class has sold
         public void ShowCupsSold(Player player)
         {
             Console.WriteLine($"You sold { player.soldLemonade } cups of lemonade");
@@ -93,20 +93,6 @@ namespace LemonadeStand
             }
         }
 
-        //public void CheckIfCustomerBought()
-        //{
-        //    for (int i = 0; i < customersPerDay.Count; i++)
-        //    {
-               
-        //    }
-        //}
-        //how to determine when day is over?
-        //counter that moves through list of customers, checking if they will buy lemonade
-        //	- need to make chancesOfBuying into something that can be compared
-        //	- maybe if (bool willBuy = true){
-        //			player.soldLemonade = player.soldLemonade +1;
-			
-        //TO DO:
-        //Check each Customer object in list customersPerDay to see if they bought lemonade
+       
     }
 }

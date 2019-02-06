@@ -28,7 +28,7 @@ namespace LemonadeStand
                 if (recipe.lemonadePrice > 0.15m)
                 {
                     
-                    int buy = rand.Next(1, 5);
+                    int buy = rand.Next(1, 11);
                     if (buy == 1)
                     {
                         player.soldLemonade++;
@@ -39,7 +39,7 @@ namespace LemonadeStand
                 else if (recipe.lemonadePrice < 0.15m)
                 {
                    
-                    int buy = rand.Next(1, 3);
+                    int buy = rand.Next(1, 4);
                     if (buy == 1)
                     {
                         player.soldLemonade++;
@@ -53,7 +53,7 @@ namespace LemonadeStand
                 if (recipe.lemonadePrice > 0.20m)
                 {
                    
-                    int buy = rand.Next(1, 3);
+                    int buy = rand.Next(1, 5);
                     if (buy == 1)
                     {
                         player.soldLemonade++;
@@ -64,7 +64,7 @@ namespace LemonadeStand
                 else if (recipe.lemonadePrice <= 0.20m)
                 {
                     
-                    int buy = rand.Next(1, 2);
+                    int buy = rand.Next(1, 4);
                     if (buy == 1)
                     {
                         player.soldLemonade++;
@@ -78,7 +78,7 @@ namespace LemonadeStand
                 if (recipe.lemonadePrice > 0.35m)
                 {
                    
-                    int buy = rand.Next(1, 3);
+                    int buy = rand.Next(1, 4);
                     if (buy == 1)
                     {
                         player.soldLemonade++;
@@ -89,7 +89,7 @@ namespace LemonadeStand
                 else if (recipe.lemonadePrice <= 0.35m)
                 {
                    
-                    int buy = rand.Next(1, 2);
+                    int buy = rand.Next(1, 3);
                     if (buy == 1)
                     {
                         player.soldLemonade++;

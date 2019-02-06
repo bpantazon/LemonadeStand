@@ -50,34 +50,23 @@ namespace LemonadeStand
             Sugar sugar = new Sugar();
             sugarInInventory.Add(sugar);
         }
+        //Single responsibility - removes an object from a list at index 0
         public void RemoveCupFromInventory()
         {           
             cupsInInventory.RemoveAt(0);
         }
         public void RemoveLemonsFromInventory()
         {
-            int amountToRecipe = UserInterface.AskForRecipe("Lemons");
-            for (int i = 0; i < amountToRecipe; i++)
-            {
-                lemonsInInventory.Remove(lemon);
-            }            
+            lemonsInInventory.RemoveAt(0);        
         }
 
         public void RemoveIceCubesFromInventory()
         {
-            int amountToRecipe = UserInterface.AskForRecipe("Ice");
-            for (int i = 0; i < amountToRecipe; i++)
-            {
-                iceCubesInInventory.Remove(iceCube);
-            }
+            iceCubesInInventory.RemoveAt(0);
         }
         public void RemoveSugarFromInventory()
         {
-            int amountToRecipe = UserInterface.AskForRecipe("Sugar");
-            for (int i = 0; i < amountToRecipe; i++)
-            {
-                sugarInInventory.Remove(sugar);
-            }
+            sugarInInventory.RemoveAt(0);
         }
         public int CountInventoryCups()
         {
@@ -106,7 +95,7 @@ namespace LemonadeStand
             CountInventoryIceCubes();
             CountInventorySugar();
         }
-        //not adding or counting ingredients in inventory
+        
         public void ShowInventory()
         {
             Console.WriteLine("Cups in inventory: " + cupCount);
